@@ -1,4 +1,5 @@
-# train
+### train
+```
 python train.py \
 --train_file dataset\EnDeepCpf1_train.csv \
 --val_file dataset\EnDeepCpf1_test.csv \
@@ -8,10 +9,11 @@ python train.py \
 --n_epochs 1000 \
 --lr 1e-4 \
 --early_stop 10
+```
 
 
-
-# finetune
+### finetune
+```
 python finetune.py \
 --train_file dataset\HEK_lenti.csv \
 --val_file dataset\HEK_HCT_plasmid.csv \
@@ -22,9 +24,10 @@ python finetune.py \
 --n_epochs 1000 \
 --lr 1e-4 \
 --early_stop 10
+```
 
-# predict 
-
+### predict 
+```
 # use_ca
 python predict.py \
 --input_file dataset\HEK_HCT_plasmid.csv \
@@ -37,3 +40,6 @@ python predict.py \
 --input_file dataset\EnDeepCpf1_test.csv \
 --output_file output\tt1.csv \
 --model_pth trained_model\EnDeepCpf1_trained_model.pth
+```
+
+
