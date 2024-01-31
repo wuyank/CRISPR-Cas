@@ -12,10 +12,10 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--train_file',
                         required=True,
-                        help='train datas which must contain "seq" and "indel_freq" two columns')
+                        help='train datas which must contain "seq", "chromatin_accessibility" and "indel_freq" three columns')
     parser.add_argument('--val_file',
                         required=True,
-                        help='validate datas which must contain "seq" and "indel_freq" two columns')
+                        help='validate datas which must contain "seq", "chromatin_accessibility" and "indel_freq" three columns')
     parser.add_argument('--output_file',
                         required=True,
                         help='predicted results of validata datas')
