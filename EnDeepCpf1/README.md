@@ -35,6 +35,45 @@ python train.py \
 --early_stop 10
 ```
 
+### Kfold cross validation
+```
+python kfold_cross_validation.py -h
+usage: kfold_cross_validation.py [-h] --train_file TRAIN_FILE --output_file OUTPUT_FILE --k_fold K_FOLD --model_dir
+                                 MODEL_DIR [--batch_size BATCH_SIZE] [--n_epochs N_EPOCHS] [--lr LR]
+                                 [--early_stop EARLY_STOP] [--random_seed RANDOM_SEED]
+
+options:
+  -h, --help            show this help message and exit
+  --train_file TRAIN_FILE
+                        train datas which must contain "seq" and "indel_freq" two columns
+  --output_file OUTPUT_FILE
+                        output csv file of cross validation
+  --k_fold K_FOLD       fold numbers for cross validation
+  --model_dir MODEL_DIR
+                        dir to save trained model weights
+  --batch_size BATCH_SIZE
+                        batch size
+  --n_epochs N_EPOCHS   max training epochs
+  --lr LR               learning rate
+  --early_stop EARLY_STOP
+                        early stop patience for model no longer getting better
+  --random_seed RANDOM_SEED
+                        random seed for k-fold split
+```
+
+example:
+```
+python kfold_cross_validation.py ^
+--train_file dataset\EnDeepCpf1_train.csv ^
+--output_file output\EnDeepCpf1_train.kfold_cross_validation.csv ^
+--k_fold 5 ^
+--model_dir trained_model\EnDeepCpf1_train.kfold_model ^
+--batch_size 64 ^
+--n_epochs 1000 ^
+--lr 1e-4 ^
+--early_stop 10 ^
+--random_seed 0
+```
 
 ### finetune
 ```

@@ -143,9 +143,9 @@ def train_test(train_loader, test_loader, model, loss_func, optimizer, device, n
         print(f'Test  loss: {mean_test_loss:.4f} | Test  pearson cor: {test_pearson_cor:.4f}  | Test  spearman cor: {test_spearman_cor:.4f}\n')
 
         # early stopping
-        # if mean_test_loss < best_loss:
+        if mean_test_loss < best_loss:
         # if test_pearson_cor > best_cor:
-        if test_spearman_cor > best_spearman_cor:
+        # if test_spearman_cor > best_spearman_cor:
             best_loss = mean_test_loss
             best_cor = test_pearson_cor
             best_spearman_cor = test_spearman_cor
